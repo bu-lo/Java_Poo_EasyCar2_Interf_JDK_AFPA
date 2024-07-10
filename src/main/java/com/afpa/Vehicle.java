@@ -3,7 +3,12 @@ package com.afpa;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public abstract class Vehicle {
+import java.io.Serializable; // SERIALIZABLE
+
+public abstract class Vehicle implements Serializable {
+
+    private static final long serialVersionUID = 42L; //Valid the Java version for SERIAZABLE
+
     private String brand;
     private String model;
     private String color;

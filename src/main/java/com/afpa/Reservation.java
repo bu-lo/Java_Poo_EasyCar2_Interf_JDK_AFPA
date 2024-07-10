@@ -3,8 +3,13 @@ package com.afpa;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+import java.io.Serializable; // SERIALIZABLE
 
-public class Reservation {
+
+public class Reservation implements Serializable {
+
+    private static final long serialVersionUID = 42L; //Valid the Java version for SERIAZABLE
+
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean paid;
