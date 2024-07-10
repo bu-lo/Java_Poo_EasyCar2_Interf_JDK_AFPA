@@ -1,6 +1,10 @@
 package com.afpa;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections; // COLLECTIONS - SORTING ALGO
+import java.util.Scanner; //SCANNER
+
 import com.afpa.MotorizedVehicle.FuelType;
 
 public class App 
@@ -15,22 +19,26 @@ public class App
         //INSTANTIATION CUSTOMERS
         Customer a = new Customer("Alain", "Clavières", "All. de Pierras", "Auziellecity", "31650");
         Customer b = new Customer("Valérie", "Clavières","All. de Pierras", "Auziellecity", "31650");
+        Customer c = new Customer("Lucas","Clavieres","Rue El A.", "Bordeaux", "33000");
 
         //INTANTIATION RESERVATIONS + LINK VEHICLE-RESERVATION
         Reservation r1 = new Reservation(LocalDate.of(2024,07,03), LocalDate.of(2024,07,22), false, car);
-        Reservation r2 = new Reservation(LocalDate.of(2024,07,03), LocalDate.of(2024,07,15), false, truck);
+        Reservation r2 = new Reservation(LocalDate.of(2024,07,03), LocalDate.of(2024,07,12), false, truck);
         Reservation r3 = new Reservation(LocalDate.of(2024,07,03), LocalDate.of(2024,07,12), false, bike);
+        Reservation r4 = new Reservation(LocalDate.of(2024,07,14), LocalDate.of(2024,07,22), true, truck );
 
         //LINK BETWEEN CLIENTS-RESERVATION
         a.addReservation(r1);
         a.addReservation(r2);
         b.addReservation(r3);
+        c.addReservation(r4);
 
         System.out.println("-------------------------------------------------------------");
 
         //TEST TOTALMONEYSPENT
         a.totalMoneySpent();
         b.totalMoneySpent();
+        c.totalMoneySpent();
 
         System.out.println("-------------------------------------------------------------");
 
@@ -40,10 +48,55 @@ public class App
         System.out.println("-------------------------------------------------------------");
 
         //TEST TOTALMONEYSPENT
-        a.totalMoneySpent();
-        b.totalMoneySpent();
+        ArrayList<Customer> customers = new ArrayList();
+        customers.add(a);
+        customers.add(b);
+        customers.add(c);
+
+        Collections.sort(customers); //COLLECTION - SORTING ALGO
+
+        for (Customer customer : customers){
+            System.out.println(customer + " - Total Money Spent : \n" + customer.totalMoneySpent());
+        }
 
         System.out.println("-------------------------------------------------------------");
 
+        int answerSerialization = inputActionsSerialization();
+
+        System.out.println("-------------------------------------------------------------");
+
+        actionsSerialization(answerSerialization);
+        
+    }
+
+    /**
+     * Input if we realize actions of Serialization //customers
+     * @return 1: Serialization | 2: Deserialization | 3: Esc
+     */
+    public static int inputActionsSerialization(){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Would you like to use informations about Customers with a saving file ?/n");
+        System.out.println("- 1 | Serialization/n");
+        System.out.println("- 2 | Deserialization/n");
+        System.out.println("- 3 | Esc/n");
+        System.out.println("Tap 1, 2 or 3 ?/n");
+        int answer = sc.nextInt();
+
+        sc.close();
+
+        return answer;
+    }
+
+    public static void actionsSerialization(int answerSerialization){
+        if (answerSerialization == 1){
+            //SERIALIZATION
+            Customer.Serialization;
+        }else if(answerSerialization == 2){
+            //DESERIALIZATION
+            Customer.Deserialization;
+        }else{ //answer is 3 or something else
+            System.out.println("No actions liked to Serialization selected.");
+        }
     }
 }
