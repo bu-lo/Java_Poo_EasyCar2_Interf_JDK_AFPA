@@ -46,7 +46,7 @@ public class SerializationActions {
     }
         
       /**
-       * Serialize 
+       * Serialize - https://ydisanto.developpez.com/tutoriels/java/serialisation-binaire/
        * @param p ArrayList<Customer>
        */  
     public static void serializationFct(ArrayList<Customer> p) {
@@ -76,7 +76,7 @@ public class SerializationActions {
     }
 
     /**
-     * Deserialize
+     * Deserialize - https://ydisanto.developpez.com/tutoriels/java/serialisation-binaire/
      * @return Deserialized ArrayList<Customer>
      */
     public static ArrayList<Customer> deserializationFct(){
