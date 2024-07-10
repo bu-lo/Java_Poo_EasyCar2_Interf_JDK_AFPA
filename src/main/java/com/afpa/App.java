@@ -88,13 +88,17 @@ public class App
         return answer;
     }
 
+    /**
+     * Actions Serialization -> Fct S or D or null
+     * @param answerSerialization
+     */
     public static void actionsSerialization(int answerSerialization){
         if (answerSerialization == 1){
             //SERIALIZATION
-            Customer.Serialization;
+            Serialization.serializationFct(ArrayList<Customer> customers);
         }else if(answerSerialization == 2){
             //DESERIALIZATION
-            Customer.Deserialization;
+            Deserialization.deserializationFct();
         }else{ //answer is 3 or something else
             System.out.println("No actions liked to Serialization selected.");
         }
