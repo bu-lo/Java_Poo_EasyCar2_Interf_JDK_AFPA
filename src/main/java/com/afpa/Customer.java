@@ -13,7 +13,7 @@ public class Customer implements Comparable<Customer>, Serializable{  // IMPLEME
     private String address;
     private String city;
     private String postalCode;
-    private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
+    private transient ArrayList<Reservation> reservations = new ArrayList<Reservation>();
    
     //CONSTRUCTORS
     public Customer(String firstName, String lastName, String address, String city, String postalCode) {

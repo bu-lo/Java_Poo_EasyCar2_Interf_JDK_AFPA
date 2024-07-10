@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections; // COLLECTIONS - SORTING ALGO
 import java.util.Scanner; //SCANNER
 
+
 import com.afpa.MotorizedVehicle.FuelType;
 
 public class App 
@@ -61,19 +62,7 @@ public class App
 
         System.out.println("-------------------------------------------------------------");
 
-        int answerSerialization = inputActionsSerialization();
-
-        System.out.println("-------------------------------------------------------------");
-
-        actionsSerialization(answerSerialization);
-        
-    }
-
-    /**
-     * Input if we realize actions of Serialization //customers
-     * @return 1: Serialization | 2: Deserialization | 3: Esc
-     */
-    public static int inputActionsSerialization(){
+    
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Would you like to use informations about Customers with a saving file ?/n");
@@ -81,21 +70,13 @@ public class App
         System.out.println("- 2 | Deserialization/n");
         System.out.println("- 3 | Esc/n");
         System.out.println("Tap 1, 2 or 3 ?/n");
-        int answer = sc.nextInt();
+        int answerSerialization = sc.nextInt();
 
         sc.close();
 
-        return answer;
-    }
-
-    /**
-     * Actions Serialization -> Fct S or D or null
-     * @param answerSerialization
-     */
-    public static void actionsSerialization(int answerSerialization){
         if (answerSerialization == 1){
             //SERIALIZATION
-            Serialization.serializationFct(ArrayList<Customer> customers);
+            Serialization.serializationFct(customers);
         }else if(answerSerialization == 2){
             //DESERIALIZATION
             Deserialization.deserializationFct();
