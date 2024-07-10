@@ -60,29 +60,7 @@ public class App {
 
         System.out.println("-------------------------------------------------------------");
 
-        Scanner sc = new Scanner(System.in);
-
-        while (true) {
-
-            System.out.println("Would you like to use informations about Customers with a saving file ?/n");
-            System.out.println("- 1 | Serialization/n");
-            System.out.println("- 2 | Deserialization/n");
-            System.out.println("- 3 | Esc/n");
-            System.out.println("Tap 1, 2 or 3 ?/n");
-            int answerSerialization = sc.nextInt();
-
-            if (answerSerialization == 1) {  //SWITCH CASE -> BREAK / RETURN
-                // SERIALIZATION
-                Serialization.serializationFct(customers);
-            } else if (answerSerialization == 2) {
-                // DESERIALIZATION
-                Deserialization.deserializationFct();
-            } else { // answer is 3 or something else
-                System.out.println("No actions liked to Serialization selected.");
-                sc.close();
-                return;
-            }
-        }
+        SerializationActions.serializationActionFct(customers);
     }
 
 }
